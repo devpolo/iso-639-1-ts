@@ -1,5 +1,5 @@
 {
-  "name": "@devpolo/iso-639-1-ts",
+  "name": "iso-639-1-ts",
   "version": "0.1.0",
   "description": "ISO 639-1 TypeScript library",
   "license": "MIT",
