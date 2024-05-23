@@ -1,0 +1,7 @@
+{
+  "collectCoverageFrom": ["src/**/*"],
+  "roots": ["specs"],
+  "transform": {
+    "^.+\\.(t|j)sx?$": "@swc/jest"
+  }
+}
