@@ -1,0 +1,36 @@
+name: 🚀 Publish npm package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: yarn
+          registry-url: https://npm.pkg.github.com
+
+      - name: 📦 Install Dependencies
+        run: yarn install --immutable
+
+      - name: 🏗️ Build and Test
+        run: |
+          yarn build
+          yarn test
+
+      - name: 🚀 Publish Package
+        run: yarn publish --tag ${{ github.event.release.tag_name }}
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

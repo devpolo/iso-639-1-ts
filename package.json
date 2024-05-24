@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "ISO 639-1 TypeScript library",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devpolo/iso-639-1-ts.git"
+  },
   "engines": {
     "node": ">=14.x.x"
   },
