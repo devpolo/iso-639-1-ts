@@ -10,6 +10,23 @@ pnpm add iso-639-1-ts
 
 ## Examples
 
+### Express
+
+```typescript
+import { Request, Response } from "express";
+import { ISO6391 } from "iso-639-1-ts";
+
+app.get("/language/:code", (req: Request, res: Response) => {
+  const code = req.params.code;
+
+  if (ISO6391.isValid(code)) {
+    res.send(ISO6391.getLocalName(code));
+  } else {
+    res.status(400).send("Invalid language code.");
+  }
+});
+```
+
 ### NestJS
 
 ```typescript
