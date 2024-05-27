@@ -31,6 +31,6 @@ jobs:
           yarn test
 
       - name: 🚀 Publish Package
-        run: yarn publish --access public --tag ${{ github.event.release.tag_name }}
+        run: yarn publish --access public --tag latest
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
